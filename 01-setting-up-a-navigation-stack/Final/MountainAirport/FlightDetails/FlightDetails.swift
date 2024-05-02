@@ -56,10 +56,24 @@ struct FlightDetails: View {
       .padding()
       .navigationTitle(flight.statusBoardName)
       .navigationBarTitleDisplayMode(.inline)
+<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/FlightDetails/FlightDetails.swift
+    }
+    .onAppear {
+      lastFlightInfo.lastFlightId = flight.id
+========
+>>>>>>>> origin/versions/1.0:01-setting-up-a-navigation-stack/Final/MountainAirport/FlightDetails/FlightDetails.swift
     }
   }
 }
 
+<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/FlightDetails/FlightDetails.swift
+#Preview {
+  NavigationStack {
+    FlightDetails(
+      flight: FlightData.generateTestFlight(date: Date())
+    )
+    .environmentObject(FlightNavigationInfo())
+========
 struct FlightDetails_Previews: PreviewProvider {
   static var previews: some View {
     NavigationStack {
@@ -67,5 +81,6 @@ struct FlightDetails_Previews: PreviewProvider {
         flight: FlightData.generateTestFlight(date: Date())
       )
     }
+>>>>>>>> origin/versions/1.0:01-setting-up-a-navigation-stack/Final/MountainAirport/FlightDetails/FlightDetails.swift
   }
 }
