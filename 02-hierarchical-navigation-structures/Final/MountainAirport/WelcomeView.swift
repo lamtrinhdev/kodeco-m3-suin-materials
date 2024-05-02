@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2024 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,18 +32,11 @@
 
 import SwiftUI
 
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/WelcomeView.swift
-
-========
->>>>>>>> origin/versions/1.0:02-hierarchical-navigation-structures/Final/MountainAirport/WelcomeView.swift
 struct WelcomeView: View {
   @StateObject var lastFlightInfo = FlightNavigationInfo()
   @StateObject var flightInfo = FlightData()
   @State private var selectedView: ButtonViewId?
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/WelcomeView.swift
-========
   @State private var selectedFlight: Int?
->>>>>>>> origin/versions/1.0:02-hierarchical-navigation-structures/Final/MountainAirport/WelcomeView.swift
 
   enum ButtonViewId: CaseIterable {
     case showFlightStatus
@@ -93,28 +86,18 @@ struct WelcomeView: View {
         )
         .listRowSeparator(.hidden)
       }
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/WelcomeView.swift
-      .listStyle(.plain)
-      .navigationTitle("Mountain Airport")
-    } detail: {
-========
       // 3
       .listStyle(.plain)
       .navigationTitle("Mountain Airport")
     } content: {
->>>>>>>> origin/versions/1.0:02-hierarchical-navigation-structures/Final/MountainAirport/WelcomeView.swift
       // 1
       switch selectedView {
       // 2
       case .showFlightStatus:
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/WelcomeView.swift
-        FlightStatusBoard(flights: flightInfo.getDaysFlights(Date()))
-========
         FlightList(
           flights: flightInfo.flights,
           selectedFlight: $selectedFlight
         )
->>>>>>>> origin/versions/1.0:02-hierarchical-navigation-structures/Final/MountainAirport/WelcomeView.swift
       case .showLastFlight:
         if
           let flightId = lastFlightInfo.lastFlightId,
@@ -124,14 +107,11 @@ struct WelcomeView: View {
       // 3
       default:
         Text("Please select an option from the sidebar")
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/WelcomeView.swift
-========
       }
     } detail: {
       if let flightId = selectedFlight,
       let flight = FlightData().getFlightById(flightId) {
         FlightDetails(flight: flight)
->>>>>>>> origin/versions/1.0:02-hierarchical-navigation-structures/Final/MountainAirport/WelcomeView.swift
       }
     }
     .environmentObject(lastFlightInfo)

@@ -32,79 +32,6 @@
 
 import SwiftUI
 
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/FlightStatusBoard/FlightStatusBoard.swift
-struct FlightStatusBoard: View {
-  var flights: [FlightInformation]
-  @State private var hidePast = false
-  @AppStorage("FlightStatusCurrentTab")
-  var selectedTab = 1
-
-  var shownFlights: [FlightInformation] {
-    hidePast ?
-    flights.filter { $0.localTime >= Date() } :
-    flights
-  }
-
-  var shortDateString: String {
-    let dateF = DateFormatter()
-    dateF.timeStyle = .none
-    dateF.dateFormat = "MMM d"
-    return dateF.string(from: Date())
-  }
-
-  var body: some View {
-    // 1
-    TabView(selection: $selectedTab) {
-      // 2
-      FlightList(
-        flights: shownFlights.filter { $0.direction == .arrival }
-      )
-      .navigationTitle("Arrivals")
-      // 3
-      .tabItem {
-        // 4
-        Image("descending-airplane")
-          .resizable()
-        Text("Arrivals")
-      }
-      .badge(shownFlights.filter { $0.direction == .arrival }.count)
-      .tag(0)
-
-      FlightList(flights: shownFlights)
-      .navigationTitle("All Flights")
-      .tabItem {
-        Image(systemName: "airplane")
-          .resizable()
-        Text("All")
-      }
-      .badge(shortDateString)
-      .tag(1)
-
-      FlightList(
-        flights: shownFlights.filter { $0.direction == .departure }
-      )
-      .navigationTitle("Departures")
-      .tabItem {
-        Image("ascending-airplane")
-        Text("Departures")
-      }
-      .badge(shownFlights.filter { $0.direction == .departure }.count)
-      .tag(2)
-    }
-    .tabViewStyle(.page)
-    .indexViewStyle(.page(backgroundDisplayMode: .always))
-    .navigationTitle("Today's Flight Status")
-    .navigationBarItems(
-      trailing: Toggle("Hide Past", isOn: $hidePast)
-    )
-  }
-}
-
-#Preview {
-  FlightStatusBoard(
-    flights: FlightData.generateTestFlights(date: Date())
-  )
-========
 struct WelcomeView: View {
   @StateObject var flightInfo = FlightData()
   @State private var hidePast = false
@@ -170,5 +97,4 @@ struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     WelcomeView()
   }
->>>>>>>> origin/versions/1.0:01-setting-up-a-navigation-stack/Final/MountainAirport/WelcomeView.swift
 }

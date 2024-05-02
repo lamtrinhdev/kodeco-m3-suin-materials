@@ -57,9 +57,4 @@ struct WelcomeButtonView: View {
   WelcomeButtonView(
     title: "Flight Status",
     subTitle: "Departure and Arrival Information"
-<<<<<<<< HEAD:03-tabview-in-swiftui/Final/MountainAirport/WelcomeButtonView.swift
-  )
-}
-========
   )}
->>>>>>>> origin/versions/1.0:02-hierarchical-navigation-structures/Final/MountainAirport/WelcomeButtonView.swift
