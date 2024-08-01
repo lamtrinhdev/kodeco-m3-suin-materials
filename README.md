@@ -2,7 +2,7 @@
 
 This repo contains all the downloadable materials and projects associated with the **SwiftUI Navigation** module in:
 
-### [Getting Started with SwiftUI Course](https://www.kodeco.com/library)
+### [Getting Started with SwiftUI Course](https://www.kodeco.com/ios/paths/getting-started-swiftui)
 
 - This course is part of [iOS Essentials Program](https://www.kodeco.com/ios/programs/ios-essentials), which you can take as either on-demand or live bootcamp from [Kodeco](https://www.kodeco.com).
 
